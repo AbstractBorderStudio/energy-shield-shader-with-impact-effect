@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://box8ud53dyp0o"]
+
+[ext_resource type="Shader" path="res://Shaders/Energy Shield 2.0.gdshader" id="1_1vxph"]
+[ext_resource type="ArrayMesh" uid="uid://dhpa1h42rrdbc" path="res://Meshs/Sphere.obj" id="2_q7dp6"]
+[ext_resource type="Script" path="res://Scripts/Impact.cs" id="3_ny1jj"]
+[ext_resource type="Curve" uid="uid://7bveivmoibvi" path="res://Curves/anim_curve.tres" id="4_vflip"]
+[ext_resource type="Curve" uid="uid://t4mitg7b5klq" path="res://Curves/impact_curve.tres" id="5_2x3r8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v5c16"]
+render_priority = 0
+shader = ExtResource("1_1vxph")
+shader_parameter/_shield_color = Color(0, 0, 1, 1)
+shader_parameter/_shield_color_brightness = 10.0
+shader_parameter/_shield_intensity = 2.0
+shader_parameter/_rotation = Vector3(0.1, 0, 0)
+shader_parameter/_shield_size = 0.0
+shader_parameter/_shield_pulse_frequency = 1.0
+shader_parameter/_shield_pulse_density = 1.0
+shader_parameter/_shield_pulse_amplitude = 10.0
+shader_parameter/_shield_pulse_blend = 2.0
+shader_parameter/_shield_pulse_radius = 1.0
+shader_parameter/_impact_origin = Vector3(1, 0, 0)
+shader_parameter/_impact_frequency = 5.0
+shader_parameter/_impact_density = 5.0
+shader_parameter/_impact_amplitude = 6.0
+shader_parameter/_impact_blend = 0.0
+shader_parameter/_impact_radius = 1.1
+shader_parameter/_impact_anim = 0.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rpiif"]
+radius = 1.0
+
+[node name="EnergyShield" type="MeshInstance3D"]
+material_override = SubResource("ShaderMaterial_v5c16")
+mesh = ExtResource("2_q7dp6")
+script = ExtResource("3_ny1jj")
+mAnimCurve = ExtResource("4_vflip")
+mImpactCurve = ExtResource("5_2x3r8")
+metadata/_edit_group_ = true
+
+[node name="ShieldCollision" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShieldCollision"]
+shape = SubResource("SphereShape3D_rpiif")
+
+[connection signal="input_event" from="ShieldCollision" to="." method="OnArea3DInputEvent"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dhpa1h42rrdbc"
+path="res://.godot/imported/Sphere.obj-0f2478bcc9529a97f1cbc3095cedd0bc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Sphere.obj-0f2478bcc9529a97f1cbc3095cedd0bc.mesh"]
+
+source_file="res://Meshs/Sphere.obj"
+dest_files=["res://.godot/imported/Sphere.obj-0f2478bcc9529a97f1cbc3095cedd0bc.mesh", "res://.godot/imported/Sphere.obj-0f2478bcc9529a97f1cbc3095cedd0bc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

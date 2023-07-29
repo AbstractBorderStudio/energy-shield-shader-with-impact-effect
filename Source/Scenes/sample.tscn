@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxfajss3i7ryn"]
+
+[ext_resource type="PackedScene" uid="uid://box8ud53dyp0o" path="res://Scenes/energy_shield.tscn" id="1_g4w6c"]
+
+[node name="Sample" type="Node3D"]
+
+[node name="EnergyShield" parent="." instance=ExtResource("1_g4w6c")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+current = true
