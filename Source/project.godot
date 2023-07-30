@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Energy Shield"
+config/tags=PackedStringArray("learn", "shader")
 run/main_scene="res://Scenes/sample.tscn"
 config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 config/icon="res://icon.svg"

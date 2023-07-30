@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2vbyvxaj7otb"]
+
+[ext_resource type="Shader" path="res://Shaders/SampleFresnel.gdshader" id="1_57jcm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rnryi"]
+render_priority = 0
+shader = ExtResource("1_57jcm")
+shader_parameter/_shield_intensity = 0.985
+
+[sub_resource type="SphereMesh" id="SphereMesh_nqguo"]
+
+[node name="SampleFresnel" type="Node3D"]
+
+[node name="SpehereAlpha" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_rnryi")
+mesh = SubResource("SphereMesh_nqguo")
+
+[node name="SpehereAlbedo" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_rnryi")
+mesh = SubResource("SphereMesh_nqguo")
