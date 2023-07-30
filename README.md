@@ -70,7 +70,7 @@ To create a cooler effect we can add a fade effect to meke the ripple deform onl
 
 ## Shield
 
->*Combining the previus effects we can achive further complex results*.
+>*Combining the previous effects we can achieve more complex results.*.
 
 ![](imgs/Shield.png)
 
