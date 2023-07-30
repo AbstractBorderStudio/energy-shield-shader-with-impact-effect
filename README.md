@@ -1,11 +1,9 @@
-# Energy Shield
-
-## Index
-
 - [Energy Shield](#energy-shield)
-  - [Index](#index)
   - [Description](#description)
   - [Fresnel reflection](#fresnel-reflection)
+  - [Credits](#credits)
+
+# Energy Shield
 
 ## Description
 
@@ -29,10 +27,8 @@ When the angle between `View` and `vertex.N` is 0, the dot product return 0. Vic
 
 ![](imgs/FresnelAlpha.png)
 
-As we can see the borders of the sphere, which faces 
+As we can see, the borders of the sphere have a stronger alpha value, compared with the center where normals are parallel to the view vector.
 
+## Credits
 
-```
-if dot(view, v.normal) == 0:
-    
-```
+https://www.ronja-tutorials.com/post/012-fresnel/
