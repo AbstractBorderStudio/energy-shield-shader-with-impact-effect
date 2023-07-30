@@ -12,6 +12,10 @@ Hi! This is my first complete shader. I decided to go easy with it and make an e
 
 >**NOTE**: *this is just a project I used to learn shaders. It is rough and incomplete but i'll try to update it as I learn new stuff!*
 
+You can find the shader also on:
+- [GodotShader.com](https://godotshaders.com/shader/energy-shield-with-impact-effect/)
+- Itch (Not yet)
+
 ## Description
 
 >*Energy shield shader with impact effect made with **Godot 4.1.1 / Vulkan API 1.3.194***
@@ -67,7 +71,6 @@ $$
 To create a cooler effect we can add a fade effect to meke the ripple deform only part of the mesh. We can use a smoothstep function to achive this.
 
 
-
 ## Shield
 
 >*Combining the previous effects we can achieve more complex results.*.
@@ -95,7 +98,6 @@ Also, applying a rotation matrix we can make the mesh spin around its center (**
 - [ ] Allow multiple impact
 - [ ] Improve visual effect adding texturs
 - [ ] Add custom animations for idle
-
 
 ## Credits
 
