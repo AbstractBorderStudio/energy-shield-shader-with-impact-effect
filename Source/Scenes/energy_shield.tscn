@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://box8ud53dyp0o"]
 
-[ext_resource type="Shader" path="res://Shaders/EnergyShield.gdshader" id="1_1vxph"]
+[ext_resource type="Shader" path="res://Shaders/EnergyShield.gdshader" id="1_6gj4b"]
 [ext_resource type="ArrayMesh" uid="uid://dhpa1h42rrdbc" path="res://Meshs/Sphere.obj" id="2_q7dp6"]
 [ext_resource type="Script" path="res://Scripts/Impact.cs" id="3_ny1jj"]
 [ext_resource type="Curve" uid="uid://7bveivmoibvi" path="res://Curves/anim_curve.tres" id="4_vflip"]
@@ -8,7 +8,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v5c16"]
 render_priority = 0
-shader = ExtResource("1_1vxph")
+shader = ExtResource("1_6gj4b")
 shader_parameter/_shield_color = Color(0, 0, 1, 1)
 shader_parameter/_shield_color_brightness = 10.0
 shader_parameter/_shield_intensity = 2.0
@@ -24,7 +24,7 @@ shader_parameter/_impact_frequency = 5.0
 shader_parameter/_impact_density = 5.0
 shader_parameter/_impact_amplitude = 6.0
 shader_parameter/_impact_blend = 0.0
-shader_parameter/_impact_radius = 1.1
+shader_parameter/_impact_radius = 2.0
 shader_parameter/_impact_anim = 0.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rpiif"]

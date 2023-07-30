@@ -10,17 +10,19 @@ public partial class Impact : MeshInstance3D
     private float mEnlapsedtime;
     private ShaderMaterial mMaterial;
 
-    private bool mAnimate = false;
+    private bool mAnimate;
 
     public override void _Ready()
     {
         mEnlapsedtime = 0.0f;
+        mAnimate = false;
         mMaterial = (ShaderMaterial)this.GetActiveMaterial(0);
         base._Ready();
     }
 
     private void SetImpactOrigin(Vector3 pos) 
     {
+        // reset animation
         mMaterial.SetShaderParameter("_impact_origin", pos);
         mMaterial.SetShaderParameter("_impact_anim", 0.0f);
         mAnimate = true;

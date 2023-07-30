@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmxgymm7n65p8"]
+
+[ext_resource type="Shader" path="res://Shaders/SampleRipple.gdshader" id="1_3kqyk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vfe6m"]
+render_priority = 0
+shader = ExtResource("1_3kqyk")
+shader_parameter/_origin = Vector3(0, 0.5, 0.5)
+shader_parameter/_frequency = 20.0
+shader_parameter/_density = 15.0
+shader_parameter/_amplitude = 6.0
+shader_parameter/_blend = 1.1
+shader_parameter/_radius = 1.1
+shader_parameter/_anim = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_yrvju"]
+
+[node name="SampleRipple" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_vfe6m")
+mesh = SubResource("SphereMesh_yrvju")

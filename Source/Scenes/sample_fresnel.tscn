@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2vbyvxaj7otb"]
+[gd_scene load_steps=9 format=3 uid="uid://d2vbyvxaj7otb"]
+
+[ext_resource type="Shader" path="res://Shaders/SampleFresnel.gdshader" id="1_57jcm"]
 
 [sub_resource type="Shader" id="Shader_meoig"]
 code = "shader_type spatial;
@@ -26,17 +28,12 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rnryi"]
-render_priority = 0
-shader = SubResource("Shader_meoig")
-shader_parameter/_shield_intensity = 0.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_nqguo"]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m7hms"]
 render_priority = 127
 shader = SubResource("Shader_meoig")
 shader_parameter/_shield_intensity = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_nqguo"]
 
 [sub_resource type="Shader" id="Shader_oosqa"]
 code = "shader_type spatial;
@@ -60,7 +57,7 @@ float ComputeFresnel(vec3 norm, vec3 view_dir, float intensity) {
 
 void fragment() {
 	float fresnel = ComputeFresnel(NORMAL, VIEW, _shield_intensity);
-	ALPHA *= fresnel;
+	//ALPHA *= fresnel;
 	ALBEDO = fresnel * vec3(1.0,0.0,0.0);
 }
 "
@@ -70,6 +67,11 @@ render_priority = 127
 shader = SubResource("Shader_oosqa")
 shader_parameter/_shield_intensity = 1.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rnryi"]
+render_priority = 0
+shader = ExtResource("1_57jcm")
+shader_parameter/_shield_intensity = 0.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q2lmj"]
 render_priority = 127
 shader = SubResource("Shader_meoig")
@@ -77,26 +79,37 @@ shader_parameter/_shield_intensity = 10.0
 
 [node name="SampleFresnel" type="Node3D"]
 
-[node name="SpehereAlpha 0" type="MeshInstance3D" parent="."]
-material_override = SubResource("ShaderMaterial_rnryi")
-mesh = SubResource("SphereMesh_nqguo")
+[node name="Example 1" type="Node3D" parent="."]
+metadata/_edit_group_ = true
 
-[node name="SpehereAlpha 1" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0)
-material_override = SubResource("ShaderMaterial_m7hms")
-mesh = SubResource("SphereMesh_nqguo")
-
-[node name="SpehereAlpha 2" type="MeshInstance3D" parent="."]
+[node name="SpehereAlpha" type="MeshInstance3D" parent="Example 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 material_override = SubResource("ShaderMaterial_m7hms")
 mesh = SubResource("SphereMesh_nqguo")
+skeleton = NodePath("../..")
 
-[node name="SpehereAlpha 3" type="MeshInstance3D" parent="."]
+[node name="SpehereAlbedo" type="MeshInstance3D" parent="Example 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 1.2, 0)
 material_override = SubResource("ShaderMaterial_ocbjo")
 mesh = SubResource("SphereMesh_nqguo")
+skeleton = NodePath("../..")
 
-[node name="SpehereAlpha 10" type="MeshInstance3D" parent="."]
+[node name="Example 2" type="Node3D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="SpehereAlpha 0" type="MeshInstance3D" parent="Example 2"]
+material_override = SubResource("ShaderMaterial_rnryi")
+mesh = SubResource("SphereMesh_nqguo")
+skeleton = NodePath("../..")
+
+[node name="SpehereAlpha 1" type="MeshInstance3D" parent="Example 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0)
+material_override = SubResource("ShaderMaterial_m7hms")
+mesh = SubResource("SphereMesh_nqguo")
+skeleton = NodePath("../..")
+
+[node name="SpehereAlpha 10" type="MeshInstance3D" parent="Example 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 0)
 material_override = SubResource("ShaderMaterial_q2lmj")
 mesh = SubResource("SphereMesh_nqguo")
+skeleton = NodePath("../..")

@@ -36,7 +36,8 @@ float _GetRippleOrigin(vec3 vert, vec3 orig) {
 
 float _FadeRipple(float orig, float blend, float radius) {
 	// create a radius 
-	return smoothstep(blend, -radius, orig);
+	float b = clamp(blend, 0.0, radius);
+	return smoothstep(b, -radius, orig);
 }
 
 float _ComputeRipple(vec3 vert, vec3 orig, float blend, float radius, float freq, float dens, float ampl, float anim) {
@@ -54,9 +55,7 @@ float saturate(float x) {
 
 float ComputeFresnel(vec3 norm, vec3 view_dir, float intensity) {
 	// dot product between mesh normals and view direction
-	float fresnel = 1.0 - dot(norm, view_dir);
-	// clamp intensity between 0 and 1
-	fresnel = saturate(fresnel);
+	float fresnel = saturate(1.0 - dot(norm, view_dir));
 	// modulate fresnel intensity
 	fresnel = pow(fresnel, intensity);
 	return fresnel;

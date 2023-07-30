@@ -9,9 +9,7 @@ float saturate(float x) {
 
 float ComputeFresnel(vec3 norm, vec3 view_dir, float intensity) {
 	// dot product between mesh normals and view direction
-	float fresnel = 1.0 - dot(norm, view_dir);
-	// clamp intensity between 0 and 1
-	fresnel = saturate(fresnel);
+	float fresnel = saturate(1.0 - dot(norm, view_dir));
 	// modulate fresnel intensity
 	fresnel = pow(fresnel, intensity);
 	return fresnel;
