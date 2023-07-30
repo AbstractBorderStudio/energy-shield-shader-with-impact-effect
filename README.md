@@ -5,11 +5,11 @@
 
 # Energy Shield
 
+Hi! This is my first complete shader. I decided to go easy with it and make an energy shield, combining a `frsnel shader` for the color and a `ripple shader` to make waves to simulate impacts.
+
 ## Description
 
 >*Energy shield shader with impact effect made with **Godot 4.1.1 / Vulcan***
-
-Hi! This is my first complete shader. I decided to go easy with it and make an energy shield, combining a `frsnel shader` for the color and a `ripple shader` to make waves to simulate impacts.
 
 ## Fresnel reflection
 
@@ -23,12 +23,26 @@ $$
 fresnel = 1 - dot(vertex.N, VIEW)
 $$
 
-When the angle between `View` and `vertex.N` is 0, the dot product return 0. Viceversa, steeper angles returns higher valuers, saturating at 1 when the angle reaches 90 deg.
+When the angle between `View` and `vertex.N` is 0, the dot product return 0. Viceversa, steeper angles returns higher valuers, saturating at 1 when the angle reaches 90 deg. Combining it with the alpha value, we can get an interesting transparency effect
+
+$$
+ALPHA = ALPHA * frsnel
+$$
 
 ![](imgs/FresnelAlpha.png)
 
-As we can see, the borders of the sphere have a stronger alpha value, compared with the center where normals are parallel to the view vector.
+As we can see, the borders of the sphere have a higher alpha value, compared with the center where normals are parallel to the view vector.
+
+To modulate the intenisty we can raise fresnel to power of n, where higher the exponent, weaker the transition from the center to the border.
+
+$$
+fresnel = (1 - dot(vertex.N, VIEW))^n
+$$
+
+![Fresne Comparison](imgs/FresnelComparison.png)
 
 ## Credits
 
 https://www.ronja-tutorials.com/post/012-fresnel/
+https://www.youtube.com/watch?v=o4CGL2YXs5k
+https://www.youtube.com/watch?v=QsLkb1aOkb8&t=2s
