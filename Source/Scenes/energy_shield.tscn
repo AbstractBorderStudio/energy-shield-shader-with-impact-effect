@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://box8ud53dyp0o"]
 
-[ext_resource type="Shader" path="res://Shaders/Energy Shield 2.0.gdshader" id="1_1vxph"]
+[ext_resource type="Shader" path="res://Shaders/EnergyShield.gdshader" id="1_1vxph"]
 [ext_resource type="ArrayMesh" uid="uid://dhpa1h42rrdbc" path="res://Meshs/Sphere.obj" id="2_q7dp6"]
 [ext_resource type="Script" path="res://Scripts/Impact.cs" id="3_ny1jj"]
 [ext_resource type="Curve" uid="uid://7bveivmoibvi" path="res://Curves/anim_curve.tres" id="4_vflip"]

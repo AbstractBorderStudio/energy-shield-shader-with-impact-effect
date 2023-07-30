@@ -19,6 +19,8 @@ Hi! This is my first complete shader. I decided to go easy with it and make an e
 
 Using the dot product between the `VIEW` vector and each vertex normal of the mesh, we can calculate the intensity of the alpha, color, emission, etc...
 
+![Fresnel type](imgs/FresnelColor.png)
+
 $$
 fresnel = 1 - dot(vertex.N, VIEW)
 $$
@@ -29,8 +31,6 @@ $$
 ALPHA = ALPHA * frsnel
 $$
 
-![](imgs/FresnelAlpha.png)
-
 As we can see, the borders of the sphere have a higher alpha value, compared with the center where normals are parallel to the view vector.
 
 To modulate the intenisty we can raise fresnel to power of n, where higher the exponent, weaker the transition from the center to the border.
@@ -39,10 +39,10 @@ $$
 fresnel = (1 - dot(vertex.N, VIEW))^n
 $$
 
-![Fresne Comparison](imgs/FresnelComparison.png)
+![Fresnel Comparison](imgs/FresnelComparison.png)
 
 ## Credits
 
-https://www.ronja-tutorials.com/post/012-fresnel/
-https://www.youtube.com/watch?v=o4CGL2YXs5k
-https://www.youtube.com/watch?v=QsLkb1aOkb8&t=2s
+- https://www.ronja-tutorials.com/post/012-fresnel/
+- https://www.youtube.com/watch?v=o4CGL2YXs5k
+- https://www.youtube.com/watch?v=QsLkb1aOkb8&t=2s
