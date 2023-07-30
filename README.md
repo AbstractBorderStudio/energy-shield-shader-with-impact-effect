@@ -80,7 +80,7 @@ To test the shader, play the `Sample.tscn`.
 - Changing the curves, allow some adjustments for the animation.
 - Changing the paramenter `mAnimTime` (in the script `impact.cs`), changes the duration of the animation.
 
-To create an useful pattern for the shiel I used a custom mesh.
+To create an interesting pattern for the shield I used a custom mesh.
 
 ![Mesh](imgs/Mesh.png)
 
