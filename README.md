@@ -10,7 +10,7 @@
 
 Hi! This is my first complete shader. I decided to go easy with it and make an energy shield, combining a `frsnel shader` for the color and a `ripple shader` to make waves to simulate impacts.
 
->**NOTE**: *this is just a project I used to learn shaders. I'll try to update it as I learn new stuff!*
+>**NOTE**: *this is just a project I used to learn shaders. It is rough and incomplete but i'll try to update it as I learn new stuff!*
 
 ## Description
 
@@ -90,9 +90,9 @@ Also, applying a rotation matrix we can make the mesh spin around its center (**
 
 - [X] Fresnel
 - [X] Ripple
-- [X] Add exagon mesh
+- [X] Add hexagon mesh
 - [X] Interaction with shield
-- [ ] Add multiple impact
+- [ ] Allow multiple impact
 - [ ] Improve visual effect adding texturs
 - [ ] Add custom animations for idle
 

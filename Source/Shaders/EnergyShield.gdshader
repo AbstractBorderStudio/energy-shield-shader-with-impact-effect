@@ -99,7 +99,7 @@ void vertex() {
 	vec3 imp_or = normalize(_impact_origin);
 	
 	float impact_ripple = _ComputeRipple(w_pos, 
-		_impact_origin, 
+		_impact_origin + NODE_POSITION_WORLD.xyz, 
 		_impact_blend,
 		_impact_radius, 
 		_impact_frequency, 
