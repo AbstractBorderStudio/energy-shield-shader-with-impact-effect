@@ -11,6 +11,13 @@
 Hi! This is my first complete shader. I decided to go easy with it and make an energy shield, combining a `frsnel shader` for the color and a `ripple shader` to make waves to simulate impacts.
 
 >**NOTE**: *this is just a project I used to learn shaders. It is rough and incomplete but i'll try to update it as I learn new stuff!*
+<<<<<<< HEAD
+=======
+
+You can find the shader also on:
+- [GodotShader.com](https://godotshaders.com/shader/energy-shield-with-impact-effect/)
+- Itch (Not yet)
+>>>>>>> 87c865da7c755c690605e47224f1bc6f671438fa
 
 ## Description
 
@@ -67,10 +74,9 @@ $$
 To create a cooler effect we can add a fade effect to meke the ripple deform only part of the mesh. We can use a smoothstep function to achive this.
 
 
-
 ## Shield
 
->*Combining the previus effects we can achive further complex results*.
+>*Combining the previous effects we can achieve more complex results.*.
 
 ![](imgs/Shield.png)
 
@@ -80,7 +86,7 @@ To test the shader, play the `Sample.tscn`.
 - Changing the curves, allow some adjustments for the animation.
 - Changing the paramenter `mAnimTime` (in the script `impact.cs`), changes the duration of the animation.
 
-To create an useful pattern for the shiel I used a custom mesh.
+To create an interesting pattern for the shield I used a custom mesh.
 
 ![Mesh](imgs/Mesh.png)
 
@@ -95,7 +101,6 @@ Also, applying a rotation matrix we can make the mesh spin around its center (**
 - [ ] Allow multiple impact
 - [ ] Improve visual effect adding texturs
 - [ ] Add custom animations for idle
-
 
 ## Credits
 
