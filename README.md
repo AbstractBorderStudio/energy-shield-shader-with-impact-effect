@@ -3,6 +3,7 @@
   - [Fresnel reflection](#fresnel-reflection)
   - [Ripple effect](#ripple-effect)
   - [Shield](#shield)
+  - [Intersection](#intersection)
   - [TODO](#todo)
   - [Credits](#credits)
 
@@ -11,13 +12,10 @@
 Hi! This is my first complete shader. I decided to go easy with it and make an energy shield, combining a `frsnel shader` for the color and a `ripple shader` to make waves to simulate impacts.
 
 >**NOTE**: *this is just a project I used to learn shaders. It is rough and incomplete but i'll try to update it as I learn new stuff!*
-<<<<<<< HEAD
-=======
 
 You can find the shader also on:
 - [GodotShader.com](https://godotshaders.com/shader/energy-shield-with-impact-effect/)
 - Itch (Not yet)
->>>>>>> 87c865da7c755c690605e47224f1bc6f671438fa
 
 ## Description
 
@@ -92,6 +90,16 @@ To create an interesting pattern for the shield I used a custom mesh.
 
 Also, applying a rotation matrix we can make the mesh spin around its center (**NOTE**: in order to do so we need to have local space coordinate for each vertex).
 
+## Intersection
+
+To achive a more appealing effect we can sample the `depth texture`, which is a common buffer used to store depth information what is been redered.
+
+| ![Depth Example](imgs/DepthExample.png) |
+|:--:|
+|([Link to img author](https://forum.unity.com/threads/camera-depth-texture-sampling-with-2018-3-and-hdrp-4-x-mip-map-issue.594160/))|
+
+
+
 ## TODO
 
 - [X] Fresnel
@@ -99,6 +107,7 @@ Also, applying a rotation matrix we can make the mesh spin around its center (**
 - [X] Add hexagon mesh
 - [X] Interaction with shield
 - [ ] Allow multiple impact
+- [ ] Intersection effect
 - [ ] Improve visual effect adding texturs
 - [ ] Add custom animations for idle
 

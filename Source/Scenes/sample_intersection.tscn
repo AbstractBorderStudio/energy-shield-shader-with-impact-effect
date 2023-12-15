@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs8vuh4p3ny4s"]
+
+[ext_resource type="Shader" path="res://Shaders/SampleIntersection.gdshader" id="1_bv8oa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6wm33"]
+render_priority = 0
+shader = ExtResource("1_bv8oa")
+
+[sub_resource type="SphereMesh" id="SphereMesh_yrvju"]
+
+[node name="SampleRipple" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_6wm33")
+mesh = SubResource("SphereMesh_yrvju")
